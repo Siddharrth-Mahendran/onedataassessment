@@ -1,0 +1,10 @@
+
+image: docker:latest
+services:
+  - docker:dind
+stages:
+  - docker_build
+docker_build:
+  stage: docker_build
+  script:
+    - docker build -t docker:$CI_PIPELINE_ID .
